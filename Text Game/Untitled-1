@@ -1,38 +1,4 @@
-// Single line comment
-/*
-
-Multiline comment
-
-*/
-
-
-// alert("Warning! Will Robinson...Warning!");
-
-// confirm("Do you like pokemon?");
-
-// prompt("What type of pokemon do you like?");
-var inventory = {
-    Sword:0,
-    food:0,
-    map:0,
-    Bow:0,
-    health:100,
-    ZeckberchulinPond:20,
-    SwordDamage:20,
-    ZeckberchulinBow:30,
-    ZeckberchulinBoss:50,
-    BowDamage:10,
-}
-
-Game();
-
-function Game(){
-    
-    document.write("Legend of the Zekberchulin Hunter!");
-    var playerName = prompt("What is your name?"); 
-    alert("Welcome to the land of Druzdil "+ playerName);
-    
-    Prison();
+Prison();
     
     function Prison(){
         var prison = prompt("You wake up...our head is pounding and your vison is blurred. After pacing around walking off the headache, your vison clears. It appears you are in prison and you cannot remember why. /n -look around /n - go back to sleep /n - taunt the guard").toLowerCase();
@@ -125,39 +91,3 @@ function Game(){
         
         }
     }
-    
-    
-    
-    function Outside(){
-        var Outside = prompt(" - West Prison - East Field - North Forest - NorthEast Forest ").toLowerCase();
-        
-        switch(Outside){
-            case "prison" || "west prison" || "jail":
-                var PrisonRe = prompt("I guess you really like prison");
-                
-                Prison();
-        }
-        switch(Outside){
-            case "north forest" || "north":
-                var ForestNor = prompt("you go to the North forest");
-                
-                Outside();
-            break;
-            case "field" || "east field" || "east":
-                var FieldEa = prompt("You go to the East Field");
-                
-            break;
-            case "northeast forest" || "northeast":
-                var ForestNorEa = prompt("You go to the NorthEast forest")
-                Outside();
-            break;
-            default:
-                alert("I don't know what "+Outside+" is!");
-                Outside();
-            break;
-                
-        }
-        
-    }
-
-}
