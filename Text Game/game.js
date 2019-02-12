@@ -36,56 +36,63 @@ function Game(){
     
     function Prison(){
         var prison = prompt("You wake up...our head is pounding and your vison is blurred. After pacing around walking off the headache, your vison clears. It appears you are in prison and you cannot remember why. /n -look around /n - go back to sleep /n - taunt the guard").toLowerCase();
+        
         if(prison === "look around" || prison === "look"){
+            
             var prisonLook = prompt("The prison is small, dirty and damp. A rat scurries into a hole in the corner. Bugs squirm and scamper underfoot. There is a barred window to the back. An occupied bed has a stranger asleep snoring to the right. The cell bars and locked door to the front. An empty bed which you had sleeped in the night before to the right. In the center of the dirt floor is a lumpy moldy rug. /n -wake stranger /n -move rug /n -eat bugs").toLowerCase();
+            
             if(prisonLook === "eat bugs" || prisonLook === "eat"){
+                
                 var prisonsick = prompt("You find a black millipede runing along the floor, you eat it and instantly regreat it. You have been poisoned and know are puking blook all over the floor. -/look for antidote -/accept fate").toLowerCase(); 
+                
                 if(prisonsick == "antidote" || prisonsick === "look for antidote" || prisonsick === "look"){
+                    
                     var prisonantidote = prompt("You find a green vile on the floor next to you. /n -use it /n - don't use it").toLowerCase();
+                    
                     if(prisonantidote === "use it" || prisonantidote === "use"){
-                    var resume = confrim("You drink your roomates sweat it burn in your mouth as you final breath escapes, do you wish to continue?");
+                        var resume1 = confrim("You drink your roomates sweat it burn in your mouth as you final breath escapes, do you wish to continue?");
                         
-                    if(resume){
-                        Prison();
-                    }
-                    else{
-                        alert("See Ya");
-                     }
+                        if(resume1){
+                            Prison();
+                        }
+                        else{
+                            alert("WASTED POTENIAL!");
+                        }
                     }
                     else if(prisonantidote === "don't" || prisonantidote === "don't use it"){
-                    var resume = confirm("You die on the ground suffering, do you wish to continue?");
+                        var resume = confirm("You die on the ground suffering, do you wish to continue?");
                         
+                        if(resume){
+                            Prison();
+                        }
+                        else{
+                            alert("WASTED POTENIAL");
+                        }
+                    }
+                }
+                else if(prisonsick === "accept fate" || prisonsick === "fate" || prisonsick === "accept"){
+                    alert("You die from food poisoning");
+                    var resume = confirm("Do you wish to continue?");
+                    
                     if(resume){
                         Prison();
                     }
                     else{
-                        alert("Bye");
+                        alert("WASTED POTENIAL!");
                     }
-                 }
-                }
-                else if(prisonsick === "accept fate" || prisonsick === "fate" || prisonsick === "accept"){
-                alert("You die from food poisoning");
-                var resume = confirm("Do you wish to continue?");
-                    
-                if(resume){
-                    Prison();
-                }
-                else{
-                    alert("QUITTER");
-                }
                 
-             }
+                  }
             }
             else if(prisonLook === "wake stranger" || prisonLook === "stranger" || prisonLook === "wake"){
-            alert("You wake up a green beast with yellow eyes and sharp teeth he jumps you and stabs you");
-            var resume = confrim("Do you wish to continue?");
+                alert("You wake up a green beast with yellow eyes and sharp teeth he jumps you and stabs you");
+                var resume = confrim("Do you wish to continue?");
                 
-            if(resume){
-                Prison();
-            }
-            else{
-                alert("Failure");
-             }
+                if(resume){
+                        Prison();
+                }
+                else{
+                        alert("WASTED POTENIAL!");
+                }
             }   
             else if(prisonLook === "move rug" || prisonLook === "rug" || prisonLook === "move"){
                 var prisonSword = prompt("You find a sword, what will you use it on? /n -roomate /n -guard").toLowerCase();
@@ -95,31 +102,30 @@ function Game(){
                     }
                 }
             }
-        
-        
         else if(prison === "go to sleep" || prison === "sleep" || prison === "bed"){
-        alert("You fall back to sleep and stabbed to death by your roomate");
-        var resume = confirm("Do you wish to continue?");
+            alert("You fall back to sleep and stabbed to death by your roomate");
+            var resume = confirm("Do you wish to continue?");
             
-        if(resume){
-            Prison();
-        }
-        else{
-            alert("WASTED POTENIAL!");
-          }   
+            if(resume){
+                    Prison();
+            }
+            else{
+                    alert("WASTED POTENIAL!");
+            }   
          
         }
         else if(prison === "taunt the guard" || prison === "taunt" || "guard"){
             var gaurdTaunt = prompt("How? /n -wistle /n -yell /n -talk.").toLowerCase();
+            
             if(gaurdTanut === "wistle"){
-            alert("The guard takes that as an insult, swears at you, and kills you");
-            var resume = comfirm("Do you wish to continue?");
+                alert("The guard takes that as an insult, swears at you, and kills you");
+                var resume = comfirm("Do you wish to continue?");
                 
-            if(resume){
-                Prison();
-            }
-            else{
-                alert("Begone Scum");
+                if(resume){
+                        Prison();
+                }
+                else{
+                        alert("WASTED POTENIAL!");
                 }
             }
         
@@ -148,7 +154,7 @@ function Game(){
                 
             break;
             case "northeast forest" || "northeast":
-                var ForestNorEa = prompt("You go to the NorthEast forest")
+                var ForestNorEa = prompt("You go to the NorthEast forest");
                 Outside();
             break;
             default:
