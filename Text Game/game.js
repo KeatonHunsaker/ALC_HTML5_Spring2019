@@ -59,6 +59,7 @@ function Game(){
                     var prisonantidote = prompt("You find a green vile on the floor next to you. \n -use it \n - don't use it").toLowerCase();
                     
                     if(prisonantidote === "use it" || prisonantidote === "use"){
+                        
                         var resume = confirm("You drink your roomates sweat it burn in your mouth as you final breath escapes, do you wish to continue?");
                         
                         if(resume){
@@ -69,6 +70,7 @@ function Game(){
                         }
                     }
                     else if(prisonantidote === "don't" || prisonantidote === "don't use it"){
+                        
                         var resume = confirm("You die on the ground suffering, do you wish to continue?");
                         
                         if(resume){
@@ -84,7 +86,9 @@ function Game(){
                     }
                 }
                 else if(prisonsick === "accept fate" || prisonsick === "fate" || prisonsick === "accept"){
+                    
                     alert("You die from food poisoning");
+                    
                     var resume = confirm("Do you wish to continue?");
                     
                     if(resume){
@@ -101,7 +105,9 @@ function Game(){
                 } 
             }
             else if(prisonLook === "wake stranger" || prisonLook === "stranger" || prisonLook === "wake"){
+                
                 alert("You wake up a green beast with yellow eyes and sharp teeth he jumps you and stabs you");
+                
                 var resume = confirm("Do you wish to continue?");
                 
                 if(resume){
@@ -112,16 +118,26 @@ function Game(){
                 }
             }   
             else if(prisonLook === "move rug" || prisonLook === "rug" || prisonLook === "move"){
+                
                 var prisonSword = prompt("You find a sword, what will you use it on? \n - roomate \n -guard").toLowerCase();
+                
                 inventory.sword++
+                    
                     if(prisonSword = "roomate"){
+                        
                         var prisonRoomDead = alert("You stabed your rommate to death it looks like a green human seized lizard");
                     }
-                }
             }
+            else{
+                    alert("I don't understand "+prisonLook);
+                    Prison();
+            }
+        }
             
         else if(prison === "go to sleep" || prison === "sleep" || prison === "bed"){
+            
             alert("You fall back to sleep and stabbed to death by your roomate");
+            
             var resume = confirm("Do you wish to continue?");
             
             if(resume){
@@ -133,10 +149,13 @@ function Game(){
          
         }
         else if(prison === "taunt the guard" || prison === "taunt" || prison === "guard"){
-            var gaurdTaunt = prompt("How? \n -wistle \n -yell \n -talk.").toLowerCase();
             
-            if(gaurdTaunt === "wistle"){
+            var guardTaunt = prompt("How? \n - wistle \n - yell \n - talk.").toLowerCase();
+            
+            if(guardTaunt === "wistle"){
+                
                 alert("The guard takes that as an insult, swears at you, and kills you");
+                
                 var resume = confirm("Do you wish to continue?");
                 
                 if(resume){
@@ -148,10 +167,13 @@ function Game(){
             }
             
             else if(guardTaunt === "talk"){
+                
                 var guardTalk = prompt("The guard falls to his knees in tears, and begins recitting prayer \n - amen \n - laugh \n - say false doctrine").toLowerCase();
                 
                 if(guardTalk === "amen" || guardTalk === "close"){
-                    var amen = prompt("The guard opens his eyes and stares at you, he gets up, opens the door and leads you out of the prison");
+                    
+                    var amen = confirm("The guard opens his eyes and stares at you, he gets up, opens the door and leads you out of the prison");
+                    
                     var leavePrison = confirm("Do you wish to leave");
                     
                     if(leavePrison){
@@ -162,17 +184,46 @@ function Game(){
                         Prison();
                     }
                 }
+                
+                else if(guardTalk === "say false doctrine" || guardTalk === "say false" || guardTalk === "doctrine"){
+                    
+                    var falseDoc = prompt("He throws his holy text at you called the wand of numbers, there was something in it, \n - throw it back \n - read a verse \n - look for something").toLowerCase();
+                
+                    
+                }
+                
+                else if(guardTalk === "laugh"){
+                    
+                    var guardlaugh = alert("He use the power of his religon to fuse your mouth together, and you die from the power of the spaghetti god sauce"); 
+                    
+                    var resume = confirm("Do you wish to continue");
+                    
+                    if(resume){
+                            Prison();
+                    }
+                    else{
+                        ("WASTED POTENIAL");
+                    }
+                }
+                else{
+                        alert("I don't understand "+guardTaunt);
+                        Prison();
+                }
             }
             
             else if(guardTaunt === "yell"){
+                
                 var guardYell = prompt("The guard screams and runs, he is probaly going to get reinforcements, what should you do \n - hide \n - wait \n - prepare").toLowerCase();
                 
                 if(guardYell === "hide"){
+                    
                     var guardhide = prompt("Where \n - under your bed \n - in your bed \n - stand in the open \n - hang on ceiling").toLowerCase();
                 }
                 
                 else if(guardYell === "wait" || guardYell === "stay"){
-                    alert("After a few minutes, there are five of guards trying to break down your door, after they break it down they roast you for dinner for their warden");
+                    
+                    alert("After a few minutes, there are five of guards trying to break down your door, after they break it down, they roast you for dinner for their warden");
+                    
                     var resume = confirm("Do you wish to continue");
                     
                     if(resume){
@@ -193,7 +244,7 @@ function Game(){
         
     }
     
-}
+
     
     function Outside(){
         var Outside = prompt(" - West Prison - East Field - North Forest - NorthEast Forest ").toLowerCase();
@@ -227,4 +278,4 @@ function Game(){
         
     }
 
-
+}
