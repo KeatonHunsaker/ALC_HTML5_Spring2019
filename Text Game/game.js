@@ -38,8 +38,10 @@ Game();
 function Game(){
     
     document.write("Legend of the Zekberchulin Hunter!");
+    
     var playerName = prompt("What is your name?"); 
-    alert("Welcome to the land of Druzdil "+ playerName);
+    
+    alert("Welcome to the land of Druzdil "+playerName);
     
     Prison();
     
@@ -121,7 +123,7 @@ function Game(){
                 
                 var prisonSword = prompt("You find a sword, what will you use it on? \n - roomate \n -guard").toLowerCase();
                 
-                inventory.sword++
+                inventory.Sword++
                     
                     if(prisonSword = "roomate"){
                         
@@ -187,7 +189,26 @@ function Game(){
                 
                 else if(guardTalk === "say false doctrine" || guardTalk === "say false" || guardTalk === "doctrine"){
                     
-                    var falseDoc = prompt("He throws his holy text at you called the wand of numbers, there was something in it, \n - throw it back \n - read a verse \n - look for something").toLowerCase();
+                    var falseDoc = prompt("He throws his holy text at you called the Wand of Numbers, there was something in it, \n - throw it back \n - read a verse \n - look for something").toLowerCase();
+                    
+                    if (falseDoc === "throw it back" || falseDoc === "throw back" || "throw"){
+                        
+                        var throwholytext = alert("You throw the Wand of Numbers back at him, he falls to the ground, you see a key hanging from the books pages");
+                        
+                        var grabkey = confirm("Grab the key");
+                        
+                        if(grabkey){
+                                var keygrabed = prompt("What do you want to do with the key \n - open cell door \n - look for another door").toLowerCase();
+                        }
+                        else{
+                            var keynotgrabed = prompt("You think that grabing the key is a waste of time, after a few hours the guard wakes up and orders you to death. What should you do? \n - let it happen \n - fight back").toLowerCase();
+                            
+                            if(keynotgrabed === "let it happen"){
+                                
+                                var letithappen = prompt("They raid your cell in the middle of the night, they tie you up and take you upstairs to their warden, ")
+                            }
+                        }
+                    }
                 
                     
                 }
@@ -213,11 +234,11 @@ function Game(){
             
             else if(guardTaunt === "yell"){
                 
-                var guardYell = prompt("The guard screams and runs, he is probaly going to get reinforcements, what should you do \n - hide \n - wait \n - prepare").toLowerCase();
+                var guardYell = prompt("The guard screams and runs, he is probaly going to get reinforcements, what should you do ? \n - hide \n - wait \n - prepare").toLowerCase();
                 
                 if(guardYell === "hide"){
                     
-                    var guardhide = prompt("Where \n - under your bed \n - in your bed \n - stand in the open \n - hang on ceiling").toLowerCase();
+                    var guardhide = prompt("Where ? \n - under your bed \n - in your bed \n - stand in the open \n - hang on ceiling").toLowerCase();
                 }
                 
                 else if(guardYell === "wait" || guardYell === "stay"){
@@ -247,26 +268,26 @@ function Game(){
 
     
     function Outside(){
-        var Outside = prompt(" - West Prison - East Field - North Forest - NorthEast Forest ").toLowerCase();
+        var Outside = prompt(" \n - West Prison \n - East Field \n - North Forest \n - North East Forest ").toLowerCase();
         
         switch(Outside){
-            case "prison" || "west prison" || "jail":
+            case "prison" || "West Prison" || "jail" || "West":
                 var PrisonRe = prompt("I guess you really like prison");
                 
                 Prison();
         }
         switch(Outside){
-            case "north forest" || "north":
-                var ForestNor = prompt("you go to the North forest");
+            case "North Forest" || "north" || "North":
+                var ForestNor = prompt("You go to the North forest");
                 
                 Outside();
             break;
-            case "field" || "east field" || "east":
+            case "field" || "East Field" || "east" || "East":
                 var FieldEa = prompt("You go to the East Field");
                 
             break;
-            case "northeast forest" || "northeast":
-                var ForestNorEa = prompt("You go to the NorthEast forest");
+            case "North East forest" || "north east":
+                var ForestNorEa = prompt("You go to the North East forest");
                 Outside();
             break;
             default:
