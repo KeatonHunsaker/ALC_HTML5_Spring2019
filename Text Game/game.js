@@ -39,14 +39,18 @@ function Game(){
     
     document.write("Legend of the Zekberchulin Hunter!");
     
-    var playerName = prompt("What is your name?"); 
+    var playerName = prompt("What is your name?");
+    
+    while(!confirm("Are you sure you want "+playerName+" as a name?")){
+        playerName = prompt("What name do you want?");
+    }
     
     alert("Welcome to the land of Druzdil "+playerName);
     
     Prison();
     
     function Prison(){
-        var prison = prompt("You wake up...our head is pounding and your vison is blurred. After pacing around walking off the headache, your vison clears. It appears you are in prison and you cannot remember why. \n - look around \n - go back to sleep \n - taunt the guard").toLowerCase();
+        var prison = prompt("You wake up... your head is pounding and your vison is blurred. After pacing around your headache begins to wear off, your vison clears. It appears you are in prison and you cannot remember why. \n - look around \n - go back to sleep \n - taunt the guard").toLowerCase();
         
         if(prison === "look around" || prison === "look"){
             
@@ -54,7 +58,7 @@ function Game(){
             
             if(prisonLook === "eat bugs" || prisonLook === "eat"){
                 
-                var prisonsick = prompt("You find a black millipede runing along the floor, you eat it and instantly regreat it. You have been poisoned and know are puking blook all over the floor. \n - look for antidote \n - accept fate").toLowerCase(); 
+                var prisonsick = prompt("You find a black millipede runing along the floor, you eat it and instantly regreat it. You have been poisoned and know are puking blood all over the floor. \n - look for antidote \n - accept fate").toLowerCase(); 
                 
                 if(prisonsick == "antidote" || prisonsick === "look for antidote" || prisonsick === "look"){
                     
@@ -156,7 +160,7 @@ function Game(){
             
             if(guardTaunt === "wistle"){
                 
-                alert("The guard takes that as an insult, swears at you, and kills you");
+                alert("The guard takes that as an insult, swears at you, and kills you.");
                 
                 var resume = confirm("Do you wish to continue?");
                 
@@ -170,7 +174,7 @@ function Game(){
             
             else if(guardTaunt === "talk"){
                 
-                var guardTalk = prompt("The guard falls to his knees in tears, and begins recitting prayer \n - amen \n - laugh \n - say false doctrine").toLowerCase();
+                var guardTalk = prompt("The guard falls to his knees in tears, and begins recitting prayer, what should you say? \n - amen \n - laugh \n - say false doctrine").toLowerCase();
                 
                 if(guardTalk === "amen" || guardTalk === "close"){
                     
@@ -182,7 +186,7 @@ function Game(){
                             Outside();
                     }
                     else{
-                        ("Back to they beginning");
+                        ("Back to the beginning");
                         Prison();
                     }
                 }
@@ -198,16 +202,42 @@ function Game(){
                         var grabkey = confirm("Grab the key");
                         
                         if(grabkey){
-                                var keygrabed = prompt("What do you want to do with the key \n - open cell door \n - look for another door").toLowerCase();
+                            
+                            var keygrabed = prompt("What do you want to do with the key \n - open cell door \n - look for another door").toLowerCase();
+                            
+                            if(keygrabed === "open cell door" || keygrabed === "open door"){
+                                
+                                var opencelldoor = prompt("You open the cell door that leads to a hallway with 7 other cells, you notice a large wooden gate at the end of the hallway and a upstairs on the other side. What should you do? \n - go upstairs \n - search cells \n - search the gate").toLowerCase();
+                            }
+                            
+                            else if(keygrabed === "look for another door"){
+                                
+                                var anotherdoor = confirm("You look around and find a trapdoor under your roomates bed that requires a key, should you open it?");
+                                
+                                if(anotherdoor){
+                                    
+                                    var trapdoorcavern = alert("You climb down a lader of bones with moss growing on the walls, and a small dirpping sound below you, you notice at the bottom of your climb that you are in a sewer. A few minutes later you find another trapdoor above you with sunlight coming out.");
+                                    
+                                    var open2trapdoor = confirm("Open it");
+                                    
+                                    if(open2trapdoor){
+                                            Outside();
+                                    }
+                                    
+                                    
+                                }
+                            }
                         }
-                        else{
-                            var keynotgrabed = prompt("You think that grabing the key is a waste of time, after a few hours the guard wakes up and orders you to death. What should you do? \n - let it happen \n - fight back").toLowerCase();
+                        else {
+                            var keynotgrabed = prompt("You think that grabing the key is a waste of time, after a few hours the guard wakes up and runs away. What should you do? \n - let it happen \n - be ready").toLowerCase();
                             
                             if(keynotgrabed === "let it happen"){
                                 
-                                var letithappen = prompt("They raid your cell in the middle of the night, they tie you up and take you upstairs to their warden, ")
+                                var letithappen = prompt("They raid your cell in the middle of the night, they tie you up and take you upstairs to their warden. The warden is on a pile of human bones surronded by guards, you see a open door behind him, the rope knots are weak and fexible. What should you do? \n - secretly untie knots \n - strugle \n - do nothing").toLowerCase();
                             }
                         }
+    
+                      }
                     }
                 
                     
@@ -263,7 +293,6 @@ function Game(){
         
         }
         
-    }
     
 
     
