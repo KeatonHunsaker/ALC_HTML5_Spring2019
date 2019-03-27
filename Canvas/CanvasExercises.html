@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    
+<canvas id="myCanvas" width="1200" height="1200"
+style="border:1px solid #000000;background-color: aquamarine">
+</canvas>
+<script>
+// Setup Canvas
+var canvas = 
+    document.getElementById("myCanvas"); 
+    var ctx = cavnas.getContext("2d");
+    // Draws Rectangle
+    ctx.fillStyle = "#FF0000";
+    ctx.fillRect(0,0, 200, 50);
+    // Draws Line
+    ctx.moveTo(0,0);
+    ctx.lineTo(1180, 1100);
+    ctx.stroke();
+    //Draw Circle
+    ctx.beginPath();
+    ctx.arc(95, 50, 40, 0, 2 * Math.PI);
+    ctx.stroke();
+    //Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "green");
+    grd.addColorStop(1, "white");
+    //Fill with gradient
+    ctx.fillStyle = grd;
+    tx.fillRect(10, 10, 150, 80);
+</script>
+</body>
+</html>
