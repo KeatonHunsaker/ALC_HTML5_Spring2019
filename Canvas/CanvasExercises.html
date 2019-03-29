@@ -3,13 +3,13 @@
 <body>
     
 <canvas id="myCanvas" width="1200" height="1200"
-style="border:1px solid #000000;background-color: aquamarine">
+style="border:1px solid #000000;background-color: palevioletred">
 </canvas>
 <script>
 // Setup Canvas
 var canvas = 
     document.getElementById("myCanvas"); 
-    var ctx = cavnas.getContext("2d");
+    var ctx = canvas.getContext("2d");
     // Draws Rectangle
     ctx.fillStyle = "#FF0000";
     ctx.fillRect(0,0, 200, 50);
@@ -22,12 +22,12 @@ var canvas =
     ctx.arc(95, 50, 40, 0, 2 * Math.PI);
     ctx.stroke();
     //Create gradient
-    var grd = ctx.createLinearGradient(0, 0, 200, 0);
-    grd.addColorStop(0, "green");
+    var grd = ctx.createLinearGradient(10, 0, 200, 0);
+    grd.addColorStop(0, "purple");
     grd.addColorStop(1, "white");
     //Fill with gradient
     ctx.fillStyle = grd;
-    tx.fillRect(10, 10, 150, 80);
+    ctx.fillRect(10, 10, 150, 80);
 </script>
 </body>
 </html>
