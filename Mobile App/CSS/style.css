@@ -66,7 +66,7 @@ nav ul li a:hover{
 }
 */
 .icon-bar {
-    position:absolute;
+    position:fixed;
     bottom:0;
     left:0;
     width:100%;
@@ -117,6 +117,31 @@ div.keepOpen{
     }
 }
 */
+
+div#product_grp{
+    width:auto;
+    margin:auto;
+}
+
+figure.product{
+    float: left;
+    width:20%;
+    background-color: cadetblue
+}
+
+figure.product img{
+    display:block;
+    padding: 10px 0;
+    width:auto;
+    margin:auto;
+}
+
+figure.product figcaption{
+    text-align: center;
+    color:black;
+    font-family: fantasy;
+    font-size: 24px;
+}
 /* 
 
     font-family: 'Lora', serif;
