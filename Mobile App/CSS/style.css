@@ -142,6 +142,16 @@ figure.product figcaption{
     font-family: fantasy;
     font-size: 24px;
 }
+
+figure.product:hover{
+    color: yellow;
+}
+
+figure.text{
+    float: left;
+    width:40%;
+    background-color: cadetblue;
+}
 /* 
 
     font-family: 'Lora', serif;
