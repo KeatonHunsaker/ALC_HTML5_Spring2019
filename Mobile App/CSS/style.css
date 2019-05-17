@@ -149,9 +149,16 @@ figure.product:hover{
 
 figure.text{
     float: left;
-    width:40%;
+    width:15%;
     background-color: cadetblue;
 }
+
+figure.text img{
+    display:block;
+    padding:0px;
+    width:240px;    
+}
+
 /* 
 
     font-family: 'Lora', serif;
